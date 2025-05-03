@@ -12,7 +12,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_input = update.message.text
     try:
         response = client.chat.completions.create(
-        model="gpt-4-turbo",
+        model="gpt-3.5-turbo",
+
 
             messages=[
                 {"role": "system", "content": "Ты — полезный помощник."},
