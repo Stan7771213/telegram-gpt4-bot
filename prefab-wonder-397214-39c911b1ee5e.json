@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "prefab-wonder-397214",
+  "private_key_id": "39c911b1ee5e47440ed3952ad48e6ef345dd53b4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDC+0I7WGbxbZ2q\n4g/ktJb/AyoDV9Ns04UPq//Xgqul7BFX0RP2IjjUH/33sz1LfkDNoc8cR9Vu+Eqh\nnJWXwI9mPvizFANQeNDAjDScv6TeKFn8jsDnuR8K22mff3NMovru3FRLO7XzeP+/\n/VO2ga0BonGHmPJN2FMTdb5wwBr1JvWZMFTK2uuQgv1KKLdwGK80Xps9+rwaRkv2\ntkgyYLyHPr/m292MPmu1YlbN5zMxqCannrMy1nEYmXgfM5DZ3y9hkU8IqwNWW7GN\ncgDKxVJFlon7pytWmEYdj7LWCq4F9MnkHdgM8lV6LeH+SFOVjvXshgUh6QuemEBB\nqxv8dtHFAgMBAAECggEANe1kXiGPJ0sYBoFLwAeqk5F+dzo9QaYm8TSzKBn9+4AV\nM+Kh0LuaWCEZDv9F/rFGnxkXvUyo3W5SxewW+8fIYZEdG/p3CDTCF98vVgMzSDaE\n3PNmqzBqQ4h36CNJ8nJJUPMjZUN4iYR3x9P66UloXkFdgRFuQtWH9KPmLi0Tx6Wo\nxt/tYzsd/iTinFSelmPJJUPpsfvB1GNHQRApIh93LI0ybtn5zE7w6DBoE9spWYSW\nfT+1m6tuQHXWWzz33pFd8M738K7AJPp4gIpjkJEPfr/eYUlZ50Z61mdgpPK9laNF\n2VTqBn5BnyoCBLbu+xOPDWqKKs5rcQoXA+Wez8GOaQKBgQD0WnOXWGFXN4Dx/t1r\n+x4hwWT+Gkn3/LijNbeDk90Odd3ipzoeHhaTqP0V4fE/zyfQSY2ZR7OwJmvoDn0c\nMTCBdDk+XXQ258bBiTH5vhP9TEzWGL0KFJp6shxmuCXgHgJu1B7ZK1QT1URtrggf\nNSteY5Km2WlW3AsS/pRkvqBHowKBgQDMRmHWoHtQQVpjofdGq0N9+7sP4Qk1jV3Q\ndsVlbHshkYdLTA364rgq4Uz8ZDe/oI9rx+BOm35b4XugCakbjA0LZJ33FQt017xS\nIaRxcQQmgreYPqnoh47BUrtBUmnBDGau1W4K5QD6IbYOjwBmSc/xzDY78cXshtD3\n2QNpzEC3dwKBgHLkoNs1vDdFKsUegEBIiAd5JqJv+/21f5+GH26ntNYax6TN2n7U\nyOrPF4kVftjw75h5LTI4S530wuIPBfaejl8gJdZUHNPAMW1ItA3ouP9tw+cbJK+7\ntlMgskf+KBj0I1K3PHYCcHsO2Sj1Hm6GEolEKm13ZpdnyXE58M5Z74UfAoGAYg/j\nhenyaJuG7c9h6n3q337J1RydlCSyBZIOvtqt3XaEMWRoTakq6gLQN1VQ4eANGZuR\nFYtVxHvhIfmhQcUgufhqUKO8pTGviOn3jDHJ4UbdJevnGuaAZFP36qrKc88lOAbj\nVb2Lk4g9Yo3JjlEezx/OZUZyUlKB3IlENzTDWI8CgYEAnfsMzxg7i6u3IXDfdNYE\nZ9KQSSpYA1vfClpAaKiI8RvoF9FDZsdc2vm7V6iakcUIbpAaqbhGqA89mS6nJ2DZ\n4xhEqexkscOPopuwEM8A368EKDkSwKJpRJP2Z7wmVC+1VtDQPm5q6IB3UBvrxJeD\nkiv+BfXI4uQjOhzvLcy1bUM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "gpt-logger@prefab-wonder-397214.iam.gserviceaccount.com",
+  "client_id": "101659635407199194351",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gpt-logger%40prefab-wonder-397214.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
