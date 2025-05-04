@@ -1,32 +1,34 @@
 import os
+import requests
 from datetime import datetime
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
 from openai import OpenAI
 
-import gspread
-from google.oauth2.service_account import Credentials
-
-# 🔐 Токены
+# 🔑 Токены из Render Environment
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
-GOOGLE_SHEET_ID = "17ln_xEzNMmeOQKtMKwf_Ll0Rt39ph9olmftLn331Et0"
 
-# 🔧 OpenAI client
+# 📡 URL скрипта Google Apps Script
+GSHEET_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbya4-4PAGcMLCU9hOmQerb834JAOo8b0E90Zui79UoFYkSu-goZbCHUaX9pS_3XU5Ud/exec"
+
+# 🤖 OpenAI клиент
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-# 🔄 Логирование в Google Таблицу
-def log_to_sheet(username, user_id, message, response):
-    scope = ["https://www.googleapis.com/auth/spreadsheets"]
-    creds = Credentials.from_service_account_file("gpt-logger.json", scopes=scope)
+# 📤 Функция логирования в Google Таблицу через Apps Script
+def send_log_to_gsheet(username, user_id, message, response):
+    try:
+        payload = {
+            "username": username,
+            "user_id": user_id,
+            "message": message,
+            "response": response
+        }
+        requests.post(GSHEET_WEBHOOK_URL, json=payload, timeout=5)
+    except Exception as e:
+        print(f"Ошибка логирования в Google Таблицу: {e}")
 
-    gc = gspread.authorize(creds)
-    sheet = gc.open_by_key(GOOGLE_SHEET_ID).sheet1
-
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    sheet.append_row([timestamp, username, str(user_id), message, response])
-
-# 🤖 Обработка сообщений
+# ✉️ Обработка входящих сообщений
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_input = update.message.text
     user = update.message.from_user
@@ -36,7 +38,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "Ты — полезный ассистент."},
+                {"role": "system", "content": "Ты — полезный помощник."},
                 {"role": "user", "content": user_input}
             ]
         )
@@ -44,10 +46,8 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except Exception as e:
         reply = f"Произошла ошибка: {e}"
 
-    try:
-        log_to_sheet(user_name, user.id, user_input, reply)
-    except Exception as log_error:
-        print(f"Ошибка логирования: {log_error}")
+    # логируем
+    send_log_to_gsheet(user_name, user.id, user_input, reply)
 
     await update.message.reply_text(reply)
 
